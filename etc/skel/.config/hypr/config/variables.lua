@@ -2,7 +2,7 @@
 
 TERMINAL     = "kitty"
 FILE_MANAGER = "dolphin"
-BROWSER      = "firefox"
+BROWSER      = "brave-origin"
 EDITOR       = "gnome-text-editor --new-window"
 CALCULATOR   = "gnome-calculator"
 
@@ -13,4 +13,4 @@ MONITOR3 = ""
 PRIMARY_MONITOR = MONITOR1
 
 -- Workspaces
-NUM_WPM = 3 -- Number of workspaces per monitor (Max 10)
+NUM_WPM = 10 -- Number of workspaces per monitor (Max 10)

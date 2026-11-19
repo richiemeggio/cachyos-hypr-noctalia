@@ -16,7 +16,6 @@ hl.config({
         },
         inactive_opacity = 0.8,
         rounding = 20,
-        rounding_power = 10.0,
     },
     general = {
         allow_tearing = true,
@@ -32,34 +31,36 @@ hl.config({
 })
 
 -- Bezier curves
-hl.curve("easeInOutQuad", { type = "bezier", points = { {0.45, 0.0}, {0.55, 1.0} } })
-hl.curve("quick", { type = "bezier", points = { {0.15, 0.0}, {0.1, 1.0} } })
+hl.curve("custom1", { type = "bezier", points = { {0.0, 0.0}, {0.0, 1.0} } })
+hl.curve("customOpenClose", { type = "bezier", points = { {0.3, -0.4}, {0.7, 1.4} } })
 
 -- Animations
 hl.animation({
-    leaf = "windows",
+    leaf = "windowsIn",
     enabled = true,
-    speed = 3.0,
-    bezier = "easeInOutQuad",
-    style = "gnomed",
+    speed = 4.0,
+    bezier = "customOpenClose",
+    style = "slide",
 })
 hl.animation({
-    leaf = "border",
+    leaf = "windowsOut",
     enabled = true,
-    speed = 3.0,
-    bezier = "quick",
+    speed = 4.0,
+    bezier = "customOpenClose",
+    style = "slide",
 })
 hl.animation({
-    leaf = "borderangle",
+    leaf = "workspaces",
     enabled = true,
-    speed = 1.0,
-    bezier = "default",
+    speed = 6.0,
+    bezier = "custom1",
+    style = "slide",
 })
 hl.animation({
     leaf = "workspacesOut",
     enabled = true,
-    speed = 3.0,
-    bezier = "quick",
+    speed = 5.0,
+    bezier = "custom1",
     style = "slide",
 })
 
@@ -79,6 +80,6 @@ hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("noctalia msg panel-toggle sessio
 hl.unbind("SUPER + Z")
 hl.bind("SUPER + Z", hl.dsp.window.close())
 hl.unbind("SUPER + Q")
-hl.bind("SUPER + Q", hl.dsp.exec_cmd(""))
+hl.bind("SUPER + Q", hl.dsp.exec_cmd("noctalia msg wallpaper-random"))
 hl.unbind("SUPER + T")
 hl.bind("SUPER + T", hl.dsp.exec_cmd("Telegram"))

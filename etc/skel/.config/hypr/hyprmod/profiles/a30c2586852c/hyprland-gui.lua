@@ -28,6 +28,9 @@ hl.config({
             natural_scroll = true,
         },
     },
+    xwayland = {
+        enabled = true,
+    },
 })
 
 -- Bezier curves

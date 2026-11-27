@@ -33,40 +33,6 @@ hl.config({
     },
 })
 
--- Bezier curves
-hl.curve("custom1", { type = "bezier", points = { {0.0, 0.0}, {0.0, 1.0} } })
-hl.curve("customOpenClose", { type = "bezier", points = { {0.3, -0.4}, {0.7, 1.4} } })
-
--- Animations
-hl.animation({
-    leaf = "windowsIn",
-    enabled = true,
-    speed = 4.0,
-    bezier = "customOpenClose",
-    style = "slide",
-})
-hl.animation({
-    leaf = "windowsOut",
-    enabled = true,
-    speed = 4.0,
-    bezier = "customOpenClose",
-    style = "slide",
-})
-hl.animation({
-    leaf = "workspaces",
-    enabled = true,
-    speed = 6.0,
-    bezier = "custom1",
-    style = "slide",
-})
-hl.animation({
-    leaf = "workspacesOut",
-    enabled = true,
-    speed = 5.0,
-    bezier = "custom1",
-    style = "slide",
-})
-
 -- Monitors
 hl.monitor({
     output = "eDP-1",
